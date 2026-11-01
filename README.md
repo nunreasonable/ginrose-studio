@@ -66,6 +66,26 @@ To have it open Studio's links when another app already does:
 xdg-mime default me.daeese.apps.ginrose.studio.editor.desktop x-scheme-handler/roblox-studio x-scheme-handler/roblox-studio-auth
 ```
 
+### Native packages
+
+The release also has the same build as a distribution package, for those who
+would rather not use Flatpak. They need glibc 2.39, GTK 4.14 and libadwaita
+1.6 or newer: Debian 13, Ubuntu 25.04, Fedora 42 or later, openSUSE Tumbleweed
+and Arch have them. From the [latest release](https://github.com/nunreasonable/ginrose-studio/releases/latest):
+
+```sh
+sudo pacman -U ginrose-studio-bin-*-x86_64.pkg.tar.zst       # Arch
+sudo apt install ./ginrose-studio_*_amd64.deb                # Debian, Ubuntu
+sudo dnf install ./ginrose-studio-*.x86_64.rpm               # Fedora
+sudo zypper install ./ginrose-studio-*.x86_64.rpm            # openSUSE
+```
+
+Rosemary is not part of these packages: Ginrose Studio uses a `rosemary` on
+your `PATH` (the AUR's `rosemary`, for example) or downloads one in its setup,
+which then needs SDL 3.4 and OpenAL, and Studio's login WebKitGTK 6.0. NixOS
+and Gentoo build from source: see [packaging](https://github.com/nunreasonable/ginrose/tree/main/packaging) in
+nunreasonable/ginrose.
+
 ### Update and uninstall
 
 Run the install command again to update. To remove Ginrose Studio:
