@@ -110,7 +110,7 @@ Ginrose Studio is free software under the GNU General Public License, version
 3 or later, and so is this installer; see [LICENSE](LICENSE). The source is at
 [nunreasonable/ginrose](https://github.com/nunreasonable/ginrose). The Flatpak
 includes Ginrose's build of Rosemary, also GPL-3.0; its source is at
-[nunreasonable/rosemary](https://github.com/nunreasonable/rosemary/tree/ginrose-0.3.2).
+[nunreasonable/rosemary](https://github.com/nunreasonable/rosemary/tree/ginrose-0.3.3).
 
 The name "Ginrose Studio", its logo and its application ID are not covered by
 the license: a modified version has to go by its own name. See
