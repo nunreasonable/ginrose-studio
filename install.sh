@@ -47,8 +47,12 @@ flatpak install --user -y --noninteractive --reinstall "$tmp/$BUNDLE"
 # "Edit in Studio" on the website opens roblox-studio: links, and Studio's
 # browser login comes back as a roblox-studio-auth: one.
 if command -v xdg-mime >/dev/null; then
-    xdg-mime default "$APP.editor.desktop" \
-        x-scheme-handler/roblox-studio x-scheme-handler/roblox-studio-auth || true
+    for scheme in roblox-studio roblox-studio-auth; do
+        handler=$(xdg-mime query default "x-scheme-handler/$scheme" || true)
+        if [ -z "$handler" ]; then
+            xdg-mime default "$APP.editor.desktop" "x-scheme-handler/$scheme" || true
+        fi
+    done
 fi
 
 say "Done. Open Ginrose Studio from your app menu, or run: flatpak run $APP"
